@@ -19,7 +19,7 @@ body {
     margin-left: 35px;
     margin-top: 10px;
     white-space: pre-line;
-    max-width: 200px;
+    max-width: 70%;
 }
 
 .addTiked,
@@ -36,7 +36,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
     font-weight: 700;
-    margin-left: 587px;
+    margin-left: 49%;
     border-radius: 15px;
 }
 
@@ -127,3 +127,21 @@ body {
 
 
 /********/
+
+
+/*
+.editing {
+    width: 25px;
+    background: url("../picture/editing.jpg");
+}*/
+
+.button {
+    display: inline-block;
+    margin: 10px;
+    width: 25px;
+    height: 25px;
+    background: url('http://defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/tag.png') center center no-repeat;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, .25), inset 0 2px 0 rgba(255, 255, 255, .6), 0 2px 0 rgba(0, 0, 0, .1), inset 0 0 20px rgba(0, 0, 0, .1);
+}
