@@ -1,6 +1,8 @@
-// TODO: write your code here
-import sum from './basic';
+import AddTiked from "./addTiked";
+const addTiked = document.querySelector('.addTiked');
+addTiked.addEventListener('click', privetmir);
 
-console.log('worked');
-
-console.log(sum([1, 2]));
+function privetmir() {
+    const modalAddTiked = new AddTiked();
+    modalAddTiked.AddTikedModal();
+}
