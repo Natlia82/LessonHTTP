@@ -153,9 +153,21 @@ body {
     background-color: #ccc;
 }
 
+.backgroundModal {
+    position: fixed;
+    z-index: 9999;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
 .modal {
     width: 40%;
     margin: auto;
+    margin-top: 12px;
+    margin-left: 100px;
+    background: #b4c0ca;
 }
 
 .contenerForm {
