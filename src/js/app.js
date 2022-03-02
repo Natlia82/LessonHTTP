@@ -37,7 +37,7 @@ done.forEach(element => {
 /*отсылаем запрос*/
 const xhr = new XMLHttpRequest();
 // GET-запрос к ресурсу /hello
-xhr.open("GET", "http://localhost:9000");
+xhr.open("GET", "http://localhost:3000/?method=ticketById");
 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 // обработчик получения ответа сервера
 xhr.addEventListener('load', () => {
@@ -52,4 +52,4 @@ xhr.addEventListener('load', () => {
     }
 });
 
-xhr.send(); // выполняем запрос
+xhr.send(); // выполняем запрос */
