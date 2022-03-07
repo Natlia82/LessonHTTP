@@ -9,7 +9,7 @@ export default function RequestAll() {
     /*отсылаем запрос*/
     const xhr = new XMLHttpRequest();
     // GET-запрос к ресурсу /hello
-    xhr.open("GET", "http://localhost:3000/?method=allTickets");
+    xhr.open("GET", "http://localhost:9000/?method=allTickets");
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     // обработчик получения ответа сервера
     xhr.addEventListener('load', () => {
