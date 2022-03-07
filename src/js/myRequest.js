@@ -1,7 +1,7 @@
 import ViewTiked from "./viewTiked";
 const allTiked = new ViewTiked();
 
-export default function RequestAll() {
+export default function RequestAll(url = null) {
     //console.log(allTiked.AllTiked(modalAddTiked.AllTiked()));
     const conteinerTiket = document.querySelector('.conteinerTiket');
     //conteinerTiket.innerHTML = allTiked.AllTiked(modalAddTiked.AllTiked());
@@ -9,7 +9,7 @@ export default function RequestAll() {
     /*отсылаем запрос*/
     const xhr = new XMLHttpRequest();
     // GET-запрос к ресурсу /hello
-    xhr.open("GET", "http://localhost:7000/?method=allTickets");
+    xhr.open("GET", url);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     // обработчик получения ответа сервера
     xhr.addEventListener('load', () => {

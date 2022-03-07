@@ -1,14 +1,13 @@
 import AddTiked from "./addTiked";
 import ViewTiked from "./viewTiked";
 import RequestAll from "./myRequest";
-import RequestDelete from "./requestDelete";
 import RequestTicketFull from "./requestTicketFull";
 const modeldelete = document.querySelector("#modalDeleteTiked");
 let IdDeleteTiked = 0;
 const modalAddTiked = new AddTiked();
 const allTiked = new ViewTiked();
 
-RequestAll();
+RequestAll("http://localhost:3000/?method=allTickets");
 
 //окрываем модальное окно добавления тикета
 const addTiked = document.querySelector('.addTiked');
@@ -59,7 +58,8 @@ buttonCanselRemoveDescription.addEventListener('click', () => {
 /*удаление тикета*/
 const buttonRemoveDescription = document.querySelector('.buttonRemoveDescription');
 buttonRemoveDescription.addEventListener('click', () => {
-    RequestDelete(IdDeleteTiked);
+    // RequestDelete(IdDeleteTiked);
+    RequestAll("http://localhost:3000/?method=deleteTicket&id=" + IdDeleteTiked)
     modeldelete.classList.add("NotVisible");
 });
 
