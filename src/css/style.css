@@ -222,33 +222,16 @@ body {
     width: 60%;
 }
 
-
-/*крестик для кнопки*/
-
-.cancellation {
-    position: relative;
+.cancellation,
+.editing {
+    Text-align: center
 }
 
-.cl-btn-7 {
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    left: 4px;
+.cancellation:after {
+    content: '\2716';
+    text-align: center;
 }
 
-.cl-btn-7:before,
-.cl-btn-7:after {
-    content: "";
-    position: absolute;
-    width: 17px;
-    height: 4px;
-    background: gray;
-}
-
-.cl-btn-7:before {
-    transform: rotate(45deg);
-}
-
-.cl-btn-7:after {
-    transform: rotate(-45deg);
+.editing::after {
+    content: '\270E';
 }
