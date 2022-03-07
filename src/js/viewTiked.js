@@ -12,8 +12,8 @@ export default class ViewTiked {
                 '<span class="purpose">' + element.name +
                 '</span>' +
                 '<time datetime="2022-02-15 19:00">' + element.created + '</time>' +
-                '<div class="button editing"></div>' +
-                '<div class="button cancellation"></div>' +
+                '<div class="button editing" data-id="' + element.id + '"></div>' +
+                '<div class="button cancellation" data-del="delete" data-id="' + element.id + '"></div>' +
                 '</div>';
         });
         return rez;

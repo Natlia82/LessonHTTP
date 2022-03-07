@@ -1,6 +1,7 @@
 import AddTiked from "./addTiked";
 import ViewTiked from "./viewTiked";
 import RequestAll from "./myRequest";
+import RequestDelete from "./requestDelete";
 
 const modalAddTiked = new AddTiked();
 const allTiked = new ViewTiked();
@@ -25,6 +26,18 @@ saveNewTiket.addEventListener('click', () => {
     console.log(modalAddTiked.AllTiked());
     //  modalAddTiked.ClouseTikedModal();
 });
+
+const clickElement = document.querySelector('.conteinerTiket');
+//clickElement.getAttribute
+clickElement.addEventListener('click', (event) => {
+    //удаление элемента
+    if (event.target.getAttribute('data-del') == "delete") {
+        console.log(event.target.getAttribute('data-id'));
+        RequestDelete(event.target.getAttribute('data-id'));
+    }
+});
+
+
 
 //отметка о готовность задания
 //const
