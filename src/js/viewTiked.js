@@ -9,7 +9,7 @@ export default class ViewTiked {
                 '<input class="checkboxDone" type="checkbox" ' + chek + '>' +
                 '<span class="checkmark"></span>' +
                 '</label>' +
-                '<span class="purpose">' + element.name +
+                '<span class="purpose" data-tiket="purpose" data-id="' + element.id + '">' + element.name +
                 '</span>' +
                 '<time datetime="2022-02-15 19:00">' + element.created + '</time>' +
                 '<div class="button editing" data-id="' + element.id + '"></div>' +

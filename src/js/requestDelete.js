@@ -8,7 +8,7 @@ export default function RequestDelete(idTiked) {
     /*отсылаем запрос*/
     const xhr = new XMLHttpRequest();
     // GET-запрос к ресурсу /hello
-    xhr.open("GET", "http://localhost:9000/?method=deleteTicket&id=" + idTiked);
+    xhr.open("GET", "http://localhost:7000/?method=deleteTicket&id=" + idTiked);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     // обработчик получения ответа сервера
     xhr.addEventListener('load', () => {

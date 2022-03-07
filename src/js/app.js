@@ -2,6 +2,7 @@ import AddTiked from "./addTiked";
 import ViewTiked from "./viewTiked";
 import RequestAll from "./myRequest";
 import RequestDelete from "./requestDelete";
+import RequestTicketFull from "./requestTicketFull";
 
 const modalAddTiked = new AddTiked();
 const allTiked = new ViewTiked();
@@ -23,7 +24,7 @@ canselModal.addEventListener('click', () => {
 const saveNewTiket = document.querySelector('.buttonAddDescription');
 saveNewTiket.addEventListener('click', () => {
     //const jsonTiket = JSON.parse(modalAddTiked.AllTiked());
-    console.log(modalAddTiked.AllTiked());
+    console.log("Добавляем тикет");
     //  modalAddTiked.ClouseTikedModal();
 });
 
@@ -34,6 +35,15 @@ clickElement.addEventListener('click', (event) => {
     if (event.target.getAttribute('data-del') == "delete") {
         console.log(event.target.getAttribute('data-id'));
         RequestDelete(event.target.getAttribute('data-id'));
+    }
+
+    //показать полную и информацию о тикет
+    if (event.target.getAttribute('data-tiket') == "purpose") {
+        const conteinerTiket = document.querySelector('[data-tiket="purpose"][ data-id="' + event.target.getAttribute('data-id') + '"]');
+        const delP = document.querySelector('[data-tiket="purpose"][ data-id="' + event.target.getAttribute('data-id') + '"] p');
+        if (delP) {
+            conteinerTiket.removeChild(delP);
+        } else RequestTicketFull(event.target.getAttribute('data-id'));
     }
 });
 
