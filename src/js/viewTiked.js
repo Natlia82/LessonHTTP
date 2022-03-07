@@ -13,7 +13,7 @@ export default class ViewTiked {
                 '</span>' +
                 '<time datetime="2022-02-15 19:00">' + element.created + '</time>' +
                 '<div class="button editing" data-id="' + element.id + '"></div>' +
-                '<div class="button cancellation" data-del="delete" data-id="' + element.id + '"></div>' +
+                '<div class="button cancellation" data-del="delete" data-id="' + element.id + '"><div class="cl-btn-7"></div></div>' +
                 '</div>';
         });
         return rez;
