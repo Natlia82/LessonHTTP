@@ -3,7 +3,8 @@ import ViewTiked from "./viewTiked";
 import RequestAll from "./myRequest";
 import RequestDelete from "./requestDelete";
 import RequestTicketFull from "./requestTicketFull";
-
+const modeldelete = document.querySelector("#modalDeleteTiked");
+let IdDeleteTiked = 0;
 const modalAddTiked = new AddTiked();
 const allTiked = new ViewTiked();
 
@@ -33,8 +34,11 @@ const clickElement = document.querySelector('.conteinerTiket');
 clickElement.addEventListener('click', (event) => {
     //удаление элемента
     if (event.target.getAttribute('data-del') == "delete") {
-        console.log(event.target.getAttribute('data-id'));
-        RequestDelete(event.target.getAttribute('data-id'));
+
+        modeldelete.classList.remove("NotVisible");
+        IdDeleteTiked = event.target.getAttribute('data-id');
+        /*  console.log(event.target.getAttribute('data-id'));
+          RequestDelete(event.target.getAttribute('data-id'));*/
     }
 
     //показать полную и информацию о тикет
@@ -47,7 +51,17 @@ clickElement.addEventListener('click', (event) => {
     }
 });
 
-
+/**отмена удаления тикета */
+const buttonCanselRemoveDescription = document.querySelector('.buttonCanselRemoveDescription');
+buttonCanselRemoveDescription.addEventListener('click', () => {
+    modeldelete.classList.add("NotVisible");
+});
+/*удаление тикета*/
+const buttonRemoveDescription = document.querySelector('.buttonRemoveDescription');
+buttonRemoveDescription.addEventListener('click', () => {
+    RequestDelete(IdDeleteTiked);
+    modeldelete.classList.add("NotVisible");
+});
 
 //отметка о готовность задания
 //const
