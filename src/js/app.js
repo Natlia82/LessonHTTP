@@ -1,31 +1,11 @@
 import AddTiked from "./addTiked";
 import ViewTiked from "./viewTiked";
+import RequestAll from "./myRequest";
+
 const modalAddTiked = new AddTiked();
 const allTiked = new ViewTiked();
-//console.log(allTiked.AllTiked(modalAddTiked.AllTiked()));
-const conteinerTiket = document.querySelector('.conteinerTiket');
-//conteinerTiket.innerHTML = allTiked.AllTiked(modalAddTiked.AllTiked());
 
-/*отсылаем запрос*/
-const xhr = new XMLHttpRequest();
-// GET-запрос к ресурсу /hello
-xhr.open("GET", "http://localhost:9000/?method=allTickets");
-xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-// обработчик получения ответа сервера
-xhr.addEventListener('load', () => {
-    if (xhr.status >= 200 && xhr.status < 300) {
-        try {
-            const rezult = JSON.parse(xhr.responseText);
-            console.log("ура!!");
-            console.log(xhr.responseText);
-            conteinerTiket.innerHTML = allTiked.AllTiked(rezult);
-        } catch (e) {
-            console.error(e);
-        }
-    }
-});
-
-xhr.send(); // выполняем запрос */
+RequestAll();
 
 //окрываем модальное окно добавления тикета
 const addTiked = document.querySelector('.addTiked');
