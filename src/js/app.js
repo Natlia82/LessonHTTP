@@ -2,12 +2,14 @@ import AddTiked from "./addTiked";
 import ViewTiked from "./viewTiked";
 import RequestAll from "./myRequest";
 import RequestTicketFull from "./requestTicketFull";
+import RequestAddTicket from "./addRequest"
+let urlHost = "http://localhost:3000";
 const modeldelete = document.querySelector("#modalDeleteTiked");
 let IdDeleteTiked = 0;
 const modalAddTiked = new AddTiked();
 const allTiked = new ViewTiked();
 
-RequestAll("http://localhost:3000/?method=allTickets");
+RequestAll(urlHost + "/?method=allTickets");
 
 //окрываем модальное окно добавления тикета
 const addTiked = document.querySelector('.addTiked');
@@ -23,9 +25,13 @@ canselModal.addEventListener('click', () => {
 //добавление тикета
 const saveNewTiket = document.querySelector('.buttonAddDescription');
 saveNewTiket.addEventListener('click', () => {
-    //const jsonTiket = JSON.parse(modalAddTiked.AllTiked());
-    console.log("Добавляем тикет");
-    //  modalAddTiked.ClouseTikedModal();
+
+    let formData = new FormData();
+    formData.append("name", document.querySelector('#shortDescription').value);
+    formData.append("description", document.querySelector('#detailedDescription').value);
+    console.log(Array.from(formData));
+    RequestAddTicket(urlHost, Array.from(formData));
+    // modalAddTiked.ClouseTikedModal();
 });
 
 const clickElement = document.querySelector('.conteinerTiket');
@@ -46,7 +52,7 @@ clickElement.addEventListener('click', (event) => {
         const delP = document.querySelector('[data-tiket="purpose"][ data-id="' + event.target.getAttribute('data-id') + '"] p');
         if (delP) {
             conteinerTiket.removeChild(delP);
-        } else RequestTicketFull(event.target.getAttribute('data-id'));
+        } else RequestTicketFull(conteinerTiket, urlHost, event.target.getAttribute('data-id'));
     }
 });
 
@@ -59,7 +65,7 @@ buttonCanselRemoveDescription.addEventListener('click', () => {
 const buttonRemoveDescription = document.querySelector('.buttonRemoveDescription');
 buttonRemoveDescription.addEventListener('click', () => {
     // RequestDelete(IdDeleteTiked);
-    RequestAll("http://localhost:3000/?method=deleteTicket&id=" + IdDeleteTiked)
+    RequestAll(urlHost + "/?method=deleteTicket&id=" + IdDeleteTiked)
     modeldelete.classList.add("NotVisible");
 });
 

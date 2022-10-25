@@ -1,12 +1,13 @@
 import ViewTiked from "./viewTiked";
 const allTiked = new ViewTiked();
 
-export default function RequestTicketFull(idTiked) {
+export default function RequestTicketFull(conteinerTiket, urlHost, idTiked) {
     console.log("подробная информация");
-    const conteinerTiket = document.querySelector('[data-tiket="purpose"][ data-id="' + idTiked + '"]');
+    // const conteinerTiket = document.querySelector('[data-tiket="purpose"][ data-id="' + idTiked + '"]');
+    console.log(conteinerTiket);
     const pEliment = document.createElement("p");
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:3000/?method=ticketById&id=" + idTiked);
+    xhr.open("GET", urlHost + "/?method=ticketById&id=" + idTiked);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     // обработчик получения ответа сервера
     xhr.addEventListener('load', () => {
