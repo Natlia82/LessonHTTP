@@ -24,14 +24,17 @@ canselModal.addEventListener('click', () => {
 });
 //добавление тикета
 const saveNewTiket = document.querySelector('.buttonAddDescription');
-saveNewTiket.addEventListener('click', () => {
+saveNewTiket.addEventListener('click', (e) => {
 
-    let formData = new FormData();
-    formData.append("name", document.querySelector('#shortDescription').value);
-    formData.append("description", document.querySelector('#detailedDescription').value);
-    console.log(Array.from(formData));
-    RequestAddTicket(urlHost, Array.from(formData));
-    // modalAddTiked.ClouseTikedModal();
+    e.preventDefault();
+
+    const subscribeForm = document.querySelector('#modalAddTiked');
+    const body = 'name=' + document.querySelector('#shortDescription').value + "&description=" + document.querySelector('#detailedDescription').value;;
+    alert(body);
+    RequestAddTicket(urlHost + "/?method=createTicket", body);
+
+
+    modalAddTiked.ClouseTikedModal();
 });
 
 const clickElement = document.querySelector('.conteinerTiket');

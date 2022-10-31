@@ -16,6 +16,7 @@ export default class ViewTiked {
                 '<div class="button cancellation" data-del="delete" data-id="' + element.id + '"></div>' +
                 '</div>';
         });
+
         return rez;
     }
 }
