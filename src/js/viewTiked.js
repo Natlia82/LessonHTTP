@@ -6,7 +6,7 @@ export default class ViewTiked {
             (element.status) ? chek = "checked": chek = "";
             rez += '<div class="tiked" data-id="' + element.id + '">' +
                 '<label class="container">' +
-                '<input class="checkboxDone" type="checkbox" ' + chek + '>' +
+                '<input class="checkboxDone" data-done="done" data-id="' + element.id + '" type="checkbox" ' + chek + '>' +
                 '<span class="checkmark"></span>' +
                 '</label>' +
                 '<span class="purpose" data-tiket="purpose" data-id="' + element.id + '">' + element.name +
