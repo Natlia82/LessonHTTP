@@ -26,10 +26,10 @@ canselModal.addEventListener('click', () => {
     // const modalAddTiked = new AddTiked();
     modalAddTiked.ClouseTikedModal();
 });
-const canselModalEditing = document.querySelector('#modalEditingTiked');
+/*nata const canselModalEditing = document.querySelector('#modalEditingTiked');
 canselModalEditing.addEventListener('click', () => {
     modalAddTiked.ClouseTikedModalEditing();
-});
+});*/
 
 //добавление тикета
 const saveNewTiket = document.querySelector('.buttonAddDescription');
@@ -98,15 +98,17 @@ buttonRemoveDescription.addEventListener('click', () => {
 
 /*изменение тикета*/
 // 
-/*const saveNewTiket = document.querySelector('.buttonAddDescription');
-saveNewTiket.addEventListener('click', (e) => {
+const butEditingTiked = document.querySelector('#butEditingTiked');
+butEditingTiked.addEventListener('click', (e) => {
 
     e.preventDefault();
 
-    const subscribeForm = document.querySelector('#modalAddTiked');
-    const body = 'name=' + document.querySelector('#shortDescription').value + "&description=" + document.querySelector('#detailedDescription').value;;
+    const subscribeForm = document.querySelector('#modalEditingTiked');
+    const body = 'id=' + document.querySelector('#shortDescriptionEditing').getAttribute('data-id') +
+        '&inf=' + document.querySelector('#shortDescriptionEditing').value +
+        "&descript=" + document.querySelector('#detailedDescriptionEditing').value;
+    console.log(body);
+    RequestAddTicket(urlHost + "/?method=editingNew", body);
 
-    RequestAddTicket(urlHost + "/?method=createTicket", body);
-
-    modalAddTiked.ClouseTikedModal();
-});*/
+    modalAddTiked.ClouseTikedModalEditing();
+});
