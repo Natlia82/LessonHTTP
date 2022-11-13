@@ -4,6 +4,8 @@ import RequestAll from "./myRequest";
 import RequestTicketFull from "./requestTicketFull";
 import RequestAddTicket from "./addRequest";
 import RequestDone from "./requestDone";
+import RequestTicketEditing from "./editingTikedRequest";
+
 let urlHost = "http://localhost:3000";
 const modeldelete = document.querySelector("#modalDeleteTiked");
 let IdDeleteTiked = 0;
@@ -65,9 +67,10 @@ clickElement.addEventListener('click', (event) => {
 
     //изменить информацию о тикет 
     if (event.target.getAttribute('data-editing') == "editing") {
-        //  const editingKod = document.querySelector('[data-editing="editing"][ data-id="' + event.target.getAttribute('data-id') + '"]');
-        //  editingTiked.classList.remove('NotVisible');
+        RequestTicketEditing(urlHost, event.target.getAttribute('data-id'));
+
         modalAddTiked.EditingTikedModal();
+
     }
 
     //отметка о выполнении
@@ -84,6 +87,7 @@ const buttonCanselRemoveDescription = document.querySelector('.buttonCanselRemov
 buttonCanselRemoveDescription.addEventListener('click', () => {
     modeldelete.classList.add("NotVisible");
 });
+
 /*удаление тикета*/
 const buttonRemoveDescription = document.querySelector('.buttonRemoveDescription');
 buttonRemoveDescription.addEventListener('click', () => {
@@ -91,3 +95,18 @@ buttonRemoveDescription.addEventListener('click', () => {
     RequestAll(urlHost + "/?method=deleteTicket&id=" + IdDeleteTiked)
     modeldelete.classList.add("NotVisible");
 });
+
+/*изменение тикета*/
+// 
+/*const saveNewTiket = document.querySelector('.buttonAddDescription');
+saveNewTiket.addEventListener('click', (e) => {
+
+    e.preventDefault();
+
+    const subscribeForm = document.querySelector('#modalAddTiked');
+    const body = 'name=' + document.querySelector('#shortDescription').value + "&description=" + document.querySelector('#detailedDescription').value;;
+
+    RequestAddTicket(urlHost + "/?method=createTicket", body);
+
+    modalAddTiked.ClouseTikedModal();
+});*/
