@@ -9,6 +9,7 @@ const modeldelete = document.querySelector("#modalDeleteTiked");
 let IdDeleteTiked = 0;
 const modalAddTiked = new AddTiked();
 const allTiked = new ViewTiked();
+//const editingTiked = document.querySelector('#modalEditingTiked');
 
 RequestAll(urlHost + "/?method=allTickets");
 
@@ -23,6 +24,11 @@ canselModal.addEventListener('click', () => {
     // const modalAddTiked = new AddTiked();
     modalAddTiked.ClouseTikedModal();
 });
+const canselModalEditing = document.querySelector('#modalEditingTiked');
+canselModalEditing.addEventListener('click', () => {
+    modalAddTiked.ClouseTikedModalEditing();
+});
+
 //добавление тикета
 const saveNewTiket = document.querySelector('.buttonAddDescription');
 saveNewTiket.addEventListener('click', (e) => {
@@ -55,6 +61,13 @@ clickElement.addEventListener('click', (event) => {
         if (delP) {
             conteinerTiket.removeChild(delP);
         } else RequestTicketFull(conteinerTiket, urlHost, event.target.getAttribute('data-id'));
+    }
+
+    //изменить информацию о тикет 
+    if (event.target.getAttribute('data-editing') == "editing") {
+        //  const editingKod = document.querySelector('[data-editing="editing"][ data-id="' + event.target.getAttribute('data-id') + '"]');
+        //  editingTiked.classList.remove('NotVisible');
+        modalAddTiked.EditingTikedModal();
     }
 
     //отметка о выполнении

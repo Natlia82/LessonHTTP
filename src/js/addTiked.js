@@ -10,6 +10,15 @@ export default class AddTiked {
         addModal.classList.add('NotVisible');
     }
 
+    EditingTikedModal() {
+        const addModal = document.querySelector('#modalEditingTiked');
+        addModal.classList.remove('NotVisible');
+    }
+
+    ClouseTikedModalEditing() {
+        const addModal = document.querySelector('#modalEditingTiked');
+        addModal.classList.add('NotVisible');
+    }
 
 
 }

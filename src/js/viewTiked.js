@@ -12,7 +12,7 @@ export default class ViewTiked {
                 '<span class="purpose" data-tiket="purpose" data-id="' + element.id + '">' + element.name +
                 '</span>' +
                 '<time datetime="2022-02-15 19:00">' + element.created + '</time>' +
-                '<div class="button editing" data-id="' + element.id + '"></div>' +
+                '<div class="button editing" data-editing="editing" data-id="' + element.id + '"></div>' +
                 '<div class="button cancellation" data-del="delete" data-id="' + element.id + '"></div>' +
                 '</div>';
         });
