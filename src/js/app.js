@@ -26,10 +26,10 @@ canselModal.addEventListener('click', () => {
     // const modalAddTiked = new AddTiked();
     modalAddTiked.ClouseTikedModal();
 });
-/*nata const canselModalEditing = document.querySelector('#modalEditingTiked');
+const canselModalEditing = document.querySelector('#clouseEditingTiked');
 canselModalEditing.addEventListener('click', () => {
     modalAddTiked.ClouseTikedModalEditing();
-});*/
+});
 
 //добавление тикета
 const saveNewTiket = document.querySelector('.buttonAddDescription');
